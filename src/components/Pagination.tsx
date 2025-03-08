@@ -52,7 +52,9 @@ export const Pagination: React.FC<PaginationProps> = ({
           {pages.map((page, index) => (
             <li key={page} className="pagination__item">
               <button
-                ref={(el) => (pageRefs.current[index] = el)}
+                ref={(el) => {
+                  pageRefs.current[index] = el;
+                }}
                 className={`pagination__page ${currentPage === page ? 'active' : ''}`}
                 onClick={() => goToPage(page)}
               >
