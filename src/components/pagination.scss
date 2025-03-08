@@ -2,53 +2,73 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px; 
 
   &__button {
-    margin: 0 5px;
-    padding: 5px 10px;
-    background-color: #444;
-    color: #fff;
-    border: 1px solid #666;
-    border-radius: 3px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    padding: 6px 10px;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #f1f1f1;
+    }
 
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
     }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #007bff; 
+    }
   }
 
   &__list {
-    list-style: none;
     display: flex;
+    list-style: none;
+    gap: 5px;
+    margin: 0;
     padding: 0;
-    margin: 0 10px;
   }
 
   &__item {
-    margin: 0 3px;
+    margin: 0;
+    padding: 0;
   }
 
   &__page {
-    padding: 5px 10px;
-    border: 1px solid #666;
-    background-color: #444;
-    color: #fff;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%; 
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-size: 14px;
     cursor: pointer;
-    border-radius: 3px;
+    transition: background-color 0.2s ease, color 0.2s ease;
 
-    &:hover {
-      background-color: #555;
-    }
-
-    &:focus {
-      outline: 2px solid #007bff;
+    &:hover:not(.active) {
+      background-color: #f1f1f1;
     }
 
     &.active {
-      background-color: #0e72dd;
+      background-color: #007bff; 
       color: #fff;
       border-color: #007bff;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #007bff; 
     }
   }
 }
