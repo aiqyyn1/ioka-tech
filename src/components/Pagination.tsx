@@ -1,13 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import { usePagination } from '../hooks/usePagination';
+import { PaginationProps } from '../types/usePagination';
 import './Pagination.scss';
 
-interface PaginationProps {
-  totalPages: number;
-  initialPage?: number;
-  isLooped?: boolean;
-  jumpStep?: number;
-}
+
 
 export const Pagination: React.FC<PaginationProps> = ({
   totalPages,
